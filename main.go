@@ -8,6 +8,6 @@ func main() {
 	fmt.Println("A")
 	fmt.Println("B")
 	fmt.Println("Develops testing")
-	fmt.Println("Develops A")
-	fmt.Println("Develops A Sub")
+	fmt.Println("Develops ")
+
 }
