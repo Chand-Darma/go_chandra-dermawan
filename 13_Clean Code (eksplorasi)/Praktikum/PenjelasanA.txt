@@ -1,0 +1,16 @@
+- Berapa banyak kekurangan dalam penulisan kode tersebut?
+* 6 (enam) kekurangna.
+
+- Bagian mana saja terjadi kekurangan tersebut?
+* Karena penulisan yang salah terhadap code dan logic tersebut.
+
+- Tuliskan alasan dari setiap kekurangan tersebut. Alasan bisa diberikan dalam bentuk komentar pada kode yang disediakan berikut.
+
+* Terdapat beberapa kekurangan dalam penulisan kode tersebut:
+
+- Pada kode tersebut seharusnya tipe data field `username` dan `password` pada struct`user` menggunakan tipe data `int` seharusnya memakai `string` 
+- package yang di-import pada kode tersebut, sehingga perlu di-import package `fmt` untuk dapat melihat atau mencetak hasil.
+- Penulisan nama variabel `t` pada struct `userservice` tidak jelas dan seharusnya diganti dengan nama yang lebih jelas deskriptif bermakna seperti `users`
+- Pada method `getuserbyid` pada struct `userservice` tidak ditemukan tanda jika user tidak ditemukan, sehingga ditambahkan return value boolean untuk menandakan user ditemukan atau tidaknya.
+- Penulisan nama method dan variabel mengikuti konvensi penamaaan yang seharusnya, menggunakan huruf kapital pada awal kata untuk dapat diakses oleh package lain.
+- Penulisan method `getallusers` pada struct `userservice` menggunakan receiver `u` padahal sangat diperlukan.

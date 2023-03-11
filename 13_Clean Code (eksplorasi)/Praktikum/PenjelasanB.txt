@@ -1,0 +1,9 @@
+Penulisan kode tersebut telah diperbaiki agar lebih terbaca dan rapi dengan melakukan beberapa perubahan:
+
+- Setiap tipe data diawali dengan huruf kapital untuk menandakan bahwa tipe data tersebut dapat diakses oleh package lain.
+- Setiap method diawali dengan huruf kapital untuk menandakan bahwa method tersebut dapat diakses oleh package lain.
+- Penamaan variabel dan method diubah agar lebih deskriptif dan mengikuti konvensi penamaan.
+- Penambahan import package `fmt` untuk mencetak hasil.
+- Penambahan variabel `kecepatanBaru` pada method `TambahKecepatan` agar lebih jelas.
+- Penggunaan operator `+=` pada method `TambahKecepatan` untuk melakukan penjumlahan dengan lebih singkat.
+- Penambahan cetak hasil untuk menampilkan kecepatan mobil.
