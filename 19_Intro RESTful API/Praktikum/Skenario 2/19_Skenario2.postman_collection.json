@@ -1,0 +1,173 @@
+{
+	"info": {
+		"_postman_id": "c79e908a-0c8d-48ed-be67-7a110a9aa5d8",
+		"name": "19_Skenario2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21761832"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://virtserver.swaggerhub.com/sepulsa/RentABook-API/1.0.0/token",
+					"protocol": "https",
+					"host": [
+						"virtserver",
+						"swaggerhub",
+						"com"
+					],
+					"path": [
+						"sepulsa",
+						"RentABook-API",
+						"1.0.0",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"How to Win Friends and Influence People\",\n    \"author\": \"Dale Carnegie\",\n    \"pages\": 288,\n    \"description\": \"This book teaches techniques to improve communication and relationships.\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://virtserver.swaggerhub.com/sepulsa/RentABook-API/1.0.0/book",
+					"protocol": "https",
+					"host": [
+						"virtserver",
+						"swaggerhub",
+						"com"
+					],
+					"path": [
+						"sepulsa",
+						"RentABook-API",
+						"1.0.0",
+						"book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "PUT",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "DELETE",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://virtserver.swaggerhub.com/sepulsa/RentABook-API/1.0.0/client",
+					"protocol": "https",
+					"host": [
+						"virtserver",
+						"swaggerhub",
+						"com"
+					],
+					"path": [
+						"sepulsa",
+						"RentABook-API",
+						"1.0.0",
+						"client"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://virtserver.swaggerhub.com/sepulsa/RentABook-API/1.0.0/user",
+					"protocol": "https",
+					"host": [
+						"virtserver",
+						"swaggerhub",
+						"com"
+					],
+					"path": [
+						"sepulsa",
+						"RentABook-API",
+						"1.0.0",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://virtserver.swaggerhub.com/sepulsa/RentABook-API/1.0.0/book",
+					"protocol": "https",
+					"host": [
+						"virtserver",
+						"swaggerhub",
+						"com"
+					],
+					"path": [
+						"sepulsa",
+						"RentABook-API",
+						"1.0.0",
+						"book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://virtserver.swaggerhub.com/sepulsa/RentABook-API/1.0.0/rent",
+					"protocol": "https",
+					"host": [
+						"virtserver",
+						"swaggerhub",
+						"com"
+					],
+					"path": [
+						"sepulsa",
+						"RentABook-API",
+						"1.0.0",
+						"rent"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
