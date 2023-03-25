@@ -1,0 +1,7 @@
+Terdapat sebuah query pada SQL yaitu `SELECT * FROM users;`
+
+Dengan tujuan yang sama, tuliskan dalam bentuk perintah:
+
+1. Redis        :   SCAN 0 MATCH user:* COUNT 1000
+2. Neo4j        :   MATCH (u:Users) RETURN u
+3. Cassandra    :   SELECT * FROM users;
