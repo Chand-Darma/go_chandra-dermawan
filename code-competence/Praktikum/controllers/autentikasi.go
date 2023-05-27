@@ -3,6 +3,8 @@ package controllers
 import (
 	"net/http"
 
+	"project/config"
+	"project/middleware"
 	"project/models"
 
 	"github.com/labstack/echo"
@@ -11,36 +13,58 @@ import (
 var users []models.Users
 
 func Register(c echo.Context) error {
-	user := new(models.Users)
-	if err := c.Bind(user); err != nil {
-		return c.String(http.StatusBadRequest, "Invalid request payload")
+
+	user := models.Users{}
+	c.Bind(&user)
+
+	err := config.DB.Save(&user).Error
+	if err != nil {
+		return c.JSON(http.StatusInternalServerError, map[string]interface{}{
+			"message": err.Error(),
+		})
 	}
 
-	// Check if username already exists
-	for _, existingUser := range users {
-		if existingUser.Username == user.Username {
-			return c.String(http.StatusConflict, "Username already exists")
-		}
+	token, err := middleware.CreateToken(int(user.ID), user.Username)
+
+	if err != nil {
+		return c.JSON(http.StatusInternalServerError, map[string]interface{}{
+			"message": "Fail create JWT TOken",
+			"status":  err.Error(),
+		})
 	}
 
-	// Add new user
-	users = append(users, *user)
+	user.Token = token
 
-	return c.String(http.StatusCreated, "User registered successfully")
+	return c.JSON(http.StatusOK, map[string]interface{}{
+		"message": "success register",
+		"user":    user,
+	})
 }
 
 func Login(c echo.Context) error {
-	user := new(models.Users)
-	if err := c.Bind(user); err != nil {
-		return c.String(http.StatusBadRequest, "Invalid request payload")
+	user := models.Users{}
+	c.Bind(&user)
+
+	var existingUser models.Users
+	err := config.DB.Where("username = ?", user.Username).First(&existingUser).Error
+	if err != nil {
+		return echo.ErrUnauthorized
 	}
 
-	// Check if username and password match
-	for _, existingUser := range users {
-		if existingUser.Username == user.Username && existingUser.Password == user.Password {
-			return c.String(http.StatusOK, "Login successful")
-		}
+	if user.Password != existingUser.Password {
+		return echo.ErrUnauthorized
 	}
 
-	return echo.ErrUnauthorized
+	token, err := middleware.CreateToken(int(existingUser.ID), existingUser.Username)
+	if err != nil {
+		return c.JSON(http.StatusInternalServerError, map[string]interface{}{
+			"message": "Failed to create JWT Token",
+			"status":  err.Error(),
+		})
+	}
+
+	return c.JSON(http.StatusOK, map[string]interface{}{
+		"message": "Login successful",
+		"token":   token,
+	})
 }
